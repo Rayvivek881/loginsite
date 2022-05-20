@@ -1,8 +1,8 @@
 const jwt = require('jsonwebtoken');
 const mykey = `ivghvhdhgshbhsdhvbshdjhsdhsdghhsdbjhsdbjhs`
 
-const CreateToken = async (_id, Name) =>{
-    const token = await jwt.sign({_id: _id, Name: Name}, mykey, {
+const CreateToken = async (_id, Name, Admin) =>{
+    const token = await jwt.sign({_id: _id, Name: Name, Admin}, mykey, {
         expiresIn: '3h',
     });
     return token;

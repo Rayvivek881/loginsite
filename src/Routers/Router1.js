@@ -24,7 +24,7 @@ Router1.post('/SignIn', async (req, res) => {
     if (result == null || Password !== result.Password) {
         res.send({isVarified : false});
     } else {
-        const token = await tokenobj.CreateToken(result._id, result.Name);
+        const token = await tokenobj.CreateToken(result._id, result.Name, result.Admin);
         let options = {
             maxAge: 1000 * 60 * 15,
             httpOnly: true,

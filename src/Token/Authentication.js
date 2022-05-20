@@ -11,7 +11,8 @@ const Authentication = async (req, res, next) => {
         } else {
             req.user = {
                 _id: cookieobj._id,
-                Name: cookieobj.Name
+                Name: cookieobj.Name,
+                Admin: cookieobj.Admin
             }
             console.log('Authentication............\n', req.user);
             next();
